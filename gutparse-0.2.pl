@@ -35,18 +35,6 @@ print STDOUT "You have selected $file.\n";
 print STDOUT "Confirm? Y or N.\n";
 $confirm = <STDIN>;
 
-#while($confirm !~ m/Y|N/) {
-#  print STDOUT "Please enter Y or N:";
-#  $confirm = <STDIN>;
-#}
-
-#while($confirm =~ m/N/) {
-#  print STDOUT "Please reenter a filename: ";
-#  $file = <STDIN>;
-#  print STDOUT"Confirm? Y or N.\n";
-#  $confirm = <STDIN>;
-#}
-
 #User interface
 SWITCH: {
   if($confirm =~ m/Y/) {
@@ -98,3 +86,16 @@ close(TEMP);
 unlink $temp;
 print "Done!";
 }
+
+=head1 DESCRIPTION
+
+A simple script to remove unnecessary line breaks in Project Gutenberg
+eBook text files. This makes them easier to use in word processor and DTP
+programs by allowing propoer text flow while preserving paragraph breaks
+as a double CR.
+
+=pod SCRIPT CATEGORIES
+
+CPAN
+
+=cut
